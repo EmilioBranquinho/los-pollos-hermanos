@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    // File Layout
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    // Environment Settings
+    "module": "nodenext",  // ou "esnext" para ES modules
+    "target": "esnext",
+    "lib": ["esnext"],
+    "types": ["node"],
+    
+    // Module Resolution
+    "moduleResolution": "nodenext",  // Importante para resolução de módulos
+    "esModuleInterop": true,  // Necessário para compatibilidade com CommonJS
+    "allowSyntheticDefaultImports": true,  // Permite import default de módulos sem export default
+
+    // Other Outputs
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+
+    // Stricter Typechecking Options
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+
+    // Recommended Options
+    "strict": true,
+    "verbatimModuleSyntax": false,  // Desabilite para melhor compatibilidade com Node.js
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true,
+    
+    // Node.js specific
+    "resolveJsonModule": true  // Permite importar arquivos JSON
+  },
+  "include": ["src/**/*", "src/server.ts"],
+  "exclude": ["node_modules", "dist"]
+}
