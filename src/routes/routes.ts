@@ -1,17 +1,15 @@
-import { Request, Response, Router ,NextFunction } from "express";
-import { prisma } from '../lib/prisma';
+import { Router } from "express";
 import { CreateUserController } from "../controllers/user/createUserController";
-import { AuthUserService } from "../services/user/AuthUserService";
 import { AuthUserController } from "../controllers/user/AuthUserController";
+import { DetailUserController } from "../controllers/user/DetailUserController";
+import { isAutenticated } from "../middlewares/isAuthenticated";
 
 const router = Router();
 
-router.get("/", (req: Request, res: Response) =>{
-    return res.status(200).send("Rota 100% funcional!")
-})
-
 router.post("/users", new CreateUserController().handle);
 
-router.post("/login", new AuthUserController().handle);
+router.post("/session", new AuthUserController().handle);
+
+router.get("/me", isAutenticated, new DetailUserController().handle)
 
 export { router };

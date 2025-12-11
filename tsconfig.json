@@ -22,10 +22,10 @@
 
     // Stricter Typechecking Options
     "noUncheckedIndexedAccess": true,
-    "exactOptionalPropertyTypes": true,
+    //"exactOptionalPropertyTypes": true,
 
     // Recommended Options
-    "strict": true,
+    //"strict": true,
     "verbatimModuleSyntax": false,  // Desabilite para melhor compatibilidade com Node.js
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,

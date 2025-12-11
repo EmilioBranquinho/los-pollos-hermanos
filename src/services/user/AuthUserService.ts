@@ -1,3 +1,4 @@
+import { sign } from "jsonwebtoken";
 import { prisma } from "../../lib/prisma";
 import { compare } from "bcrypt";
 
@@ -25,7 +26,24 @@ class AuthUserService {
             throw new Error("email or password incorrect")    
         }
 
-        return { ok: true};
+        const token = sign({
+            name: user.name,
+            email: user.email
+        },
+        process.env.JWT_SECRET as string,
+        { 
+            subject: user.id, 
+            expiresIn: '30d'
+        }
+
+    )
+
+        return { 
+            id: user.id,
+            name: user.name,
+            email: user.email,
+            token: token
+        };
     }
 }
 
