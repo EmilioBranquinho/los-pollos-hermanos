@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-import { prisma } from "../../lib/prisma";
 import { AuthUserService } from "../../services/user/AuthUserService";
 
 class AuthUserController {

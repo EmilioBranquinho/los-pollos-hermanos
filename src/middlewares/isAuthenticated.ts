@@ -14,12 +14,10 @@ export function isAutenticated(
     const authToken = req.headers.authorization;
 
     if(!authToken){
-        return res.status(401).send({ message: "Acesso negado" })
+        return res.status(401).send({ message: "Access denied" })
     }
 
     const [, token] = authToken.split(" ")
-
-    console.log(token)
 
     try {
 
@@ -27,6 +25,8 @@ export function isAutenticated(
             token,
             process.env.JWT_SECRET
         ) as Payload;
+
+        req.user_id = sub;
 
         return next();
 

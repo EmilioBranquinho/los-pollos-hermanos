@@ -9,7 +9,7 @@
     "target": "esnext",
     "lib": ["esnext"],
     "types": ["node"],
-    
+      
     // Module Resolution
     "moduleResolution": "nodenext",  // Importante para resolução de módulos
     "esModuleInterop": true,  // Necessário para compatibilidade com CommonJS
@@ -31,7 +31,6 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
-    
     // Node.js specific
     "resolveJsonModule": true  // Permite importar arquivos JSON
   },
