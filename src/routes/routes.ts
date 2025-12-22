@@ -4,10 +4,13 @@ import { AuthUserController } from "../controllers/user/AuthUserController";
 import { DetailUserController } from "../controllers/user/DetailUserController";
 import { isAutenticated } from "../middlewares/isAuthenticated";
 import { CreateCategoryController } from "../controllers/category/CreateCategoryController";
-import { ListCategoryService } from "../services/category/ListCategoryService";
 import { ListCategoryController } from "../controllers/category/ListCategoryController";
+import { CreateProductController } from "../controllers/product/CreateProductController";
+import uploadConfig from '../config/multer';
+import multer from "multer";
 
 const router = Router();
+const upload = multer(uploadConfig.upload("./tmp"))
 
 //Rotas user
 router.post("/users", new CreateUserController().handle);
@@ -19,6 +22,8 @@ router.get("/me", isAutenticated, new DetailUserController().handle);
 //rotas category
 router.post("/category", isAutenticated, new CreateCategoryController().handle);
 
-router.get("/category", isAutenticated, new ListCategoryController().handle)
+router.get("/category", isAutenticated, new ListCategoryController().handle);
 
+//rotas product
+router.post("/product", isAutenticated, upload.single('file'), new CreateProductController().handle);
 export { router };
