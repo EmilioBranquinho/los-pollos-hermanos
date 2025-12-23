@@ -13,7 +13,7 @@ class RemoveOrderService {
         }
     })
 
-    return Response.json(removedOrder);
+    return removedOrder;
    } 
 }
 
