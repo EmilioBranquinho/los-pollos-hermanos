@@ -8,6 +8,7 @@ import { ListCategoryController } from "../controllers/category/ListCategoryCont
 import { CreateProductController } from "../controllers/product/CreateProductController";
 import uploadConfig from '../config/multer';
 import multer from "multer";
+import { ListByCategoryController } from "../controllers/product/ListByCategoryController";
 
 const router = Router();
 const upload = multer(uploadConfig.upload("./tmp"))
@@ -26,4 +27,7 @@ router.get("/category", isAutenticated, new ListCategoryController().handle);
 
 //rotas product
 router.post("/product", isAutenticated, upload.single('file'), new CreateProductController().handle);
+
+router.get("/category/product", isAutenticated, new ListByCategoryController().handle)
+
 export { router };
