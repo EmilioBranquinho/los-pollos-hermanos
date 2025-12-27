@@ -16,7 +16,8 @@ class DetailUserService {
             }
         });
 
-        return { userDetail }
+        return userDetail 
+        
     } catch (error) {
         return error     
     }
