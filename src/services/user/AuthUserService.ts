@@ -37,7 +37,6 @@ class AuthUserService {
         }
 
     )
-
         return { 
             id: user.id,
             name: user.name,

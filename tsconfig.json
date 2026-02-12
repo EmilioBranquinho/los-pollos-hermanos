@@ -1,39 +1,22 @@
 {
   "compilerOptions": {
-    // File Layout
     "rootDir": "./src",
     "outDir": "./dist",
 
-    // Environment Settings
-    "module": "nodenext",  // ou "esnext" para ES modules
-    "target": "esnext",
-    "lib": ["esnext"],
-    "types": ["node"],
-      
-    // Module Resolution
-    "moduleResolution": "nodenext",  // Importante para resolução de módulos
-    "esModuleInterop": true,  // Necessário para compatibilidade com CommonJS
-    "allowSyntheticDefaultImports": true,  // Permite import default de módulos sem export default
+    "module": "commonjs",
+    "target": "es2019",
+    "moduleResolution": "node",
 
-    // Other Outputs
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+
     "sourceMap": true,
-    "declaration": true,
-    "declarationMap": true,
+    "declaration": false,
 
-    // Stricter Typechecking Options
-    "noUncheckedIndexedAccess": true,
-    //"exactOptionalPropertyTypes": true,
-
-    // Recommended Options
-    //"strict": true,
-    "verbatimModuleSyntax": false,  // Desabilite para melhor compatibilidade com Node.js
-    "isolatedModules": true,
-    "noUncheckedSideEffectImports": true,
-    "moduleDetection": "force",
+    "strict": true,
     "skipLibCheck": true,
-    // Node.js specific
-    "resolveJsonModule": true  // Permite importar arquivos JSON
+    "resolveJsonModule": true
   },
-  "include": ["src/**/*", "src/server.ts"],
+  "include": ["src"],
   "exclude": ["node_modules", "dist"]
 }

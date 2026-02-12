@@ -1,0 +1,1 @@
+{"version":3,"file":"DetailOrderController.d.ts","sourceRoot":"","sources":["../../../src/controllers/order/DetailOrderController.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,QAAQ,EAAE,MAAM,SAAS,CAAC;AAI5C,cAAM,qBAAqB;IACjB,MAAM,CAAC,GAAG,EAAC,OAAO,EAAE,GAAG,EAAC,QAAQ;CAUzC;AAED,OAAO,EAAE,qBAAqB,EAAE,CAAA"}

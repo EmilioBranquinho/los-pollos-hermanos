@@ -7,7 +7,7 @@ class CreateCategoryService {
 
         if(!name){
             console.log("sem nome"); 
-            throw new error("Erro, name is mandatory!");  
+            throw new Error("Error, name is mandatory!");  
         }
 
         const existingCategory = await prisma.category.findFirst({
@@ -17,7 +17,7 @@ class CreateCategoryService {
         });
 
         if(existingCategory){
-            throw new error("Error, category already exists!")
+            throw new Error("Error, category already exists!")
         }
 
         const category = await prisma.category.create({

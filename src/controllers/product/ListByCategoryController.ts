@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { ListByCategoryService } from "../../services/product/ListByCategoryService";
+import { ListByCategoryService } from "../../services/product/ListByCategoryService.js";
 
 
 class ListByCategoryController{

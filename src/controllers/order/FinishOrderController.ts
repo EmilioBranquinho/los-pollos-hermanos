@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { FinishOrderService } from "../../services/order/FinishOrderService";
+import { FinishOrderService } from "../../services/order/FinishOrderService.js";
 
 class FinishOrderController{
     async handle(req:Request, res:Response){
