@@ -6,8 +6,13 @@ import path from 'path';
 const app = express();
 app.use(express.json()); 
 app.use(cors({
-    origin: process.env.NODE_ENV === "production" ? process.env.CLIENT_URL : "http://localhost:3000"
+  origin: [
+    "http://localhost:3000",
+    "http://localhost:8081",
+    process.env.CLIENT_URL as string
+  ]
 }));
+
 app.use('/img', express.static(path.resolve(__dirname, "..", "tmp")));
 
 const PORT = process.env.PORT;
