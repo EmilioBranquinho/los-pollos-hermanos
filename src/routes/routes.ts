@@ -18,6 +18,8 @@ import { ListOrderController } from "../controllers/order/ListOrderController.js
 import { DetailOrderController } from "../controllers/order/DetailOrderController.js";
 import { FinishOrderController } from "../controllers/order/FinishOrderController.js";
 import { DeleteCategoryController } from "../controllers/category/DeleteCategoryController.js";
+import { ListAllProductsController } from "../controllers/product/ListAllProductsController.js";
+import { DeleteProductController } from "../controllers/product/DeleteProductController.js";
 
 const router = Router();
 const upload = multer(uploadConfig.upload("./tmp"))
@@ -34,12 +36,16 @@ router.post("/category", isAutenticated, new CreateCategoryController().handle);
 
 router.get("/category", isAutenticated, new ListCategoryController().handle);
 
+router.delete("/category/remove", isAutenticated, new DeleteCategoryController().handle)
+
 //rotas product
 router.post("/product", isAutenticated, upload.single('file'), new CreateProductController().handle);
 
 router.get("/category/product", isAutenticated, new ListByCategoryController().handle)
 
-router.delete("/category/remove", isAutenticated, new DeleteCategoryController().handle)
+router.get("/products", isAutenticated, new ListAllProductsController().handle)
+
+router.delete("/product/remove", isAutenticated, new DeleteProductController().handle)
 
 //rotas order
 router.post("/order", isAutenticated, new CreateOrderController().handle);

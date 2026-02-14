@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@borewit/text-codec@^0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@borewit/text-codec/-/text-codec-0.2.1.tgz#5d171538907a8cb395fdc2eb5e8f7947d96c7f2f"
+  integrity sha512-k7vvKPbf7J2fZ5klGRD9AeKfUvojuZIQ3BT5u7Jfv+puwXkUBUT5PVyMDfJZpy30CBDXGMgw7fguK/lpOMBvgw==
+
 "@chevrotain/cst-dts-gen@10.5.0":
   version "10.5.0"
   resolved "https://registry.npmjs.org/@chevrotain/cst-dts-gen/-/cst-dts-gen-10.5.0.tgz"
@@ -335,6 +340,19 @@
   version "1.0.0"
   resolved "https://registry.npmjs.org/@standard-schema/spec/-/spec-1.0.0.tgz"
   integrity sha512-m2bOd0f2RT9k8QJx1JN85cZYyH1RqFBdlwtkSlf4tBDYLCiiZnv1fIIwacK6cqwXavOydf0NPToMQgpKq+dVlA==
+
+"@tokenizer/inflate@^0.4.1":
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/@tokenizer/inflate/-/inflate-0.4.1.tgz#fa6cdb8366151b3cc8426bf9755c1ea03a2fba08"
+  integrity sha512-2mAv+8pkG6GIZiF1kNg1jAjh27IDxEPKwdGul3snfztFerfPGI1LjDezZp3i7BElXompqEtPmoPx6c2wgtWsOA==
+  dependencies:
+    debug "^4.4.3"
+    token-types "^6.1.1"
+
+"@tokenizer/token@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@tokenizer/token/-/token-0.3.0.tgz#fe98a93fe789247e998c75e74e9c7c63217aa276"
+  integrity sha512-OvjF+z51L3ov0OyAU0duzsYuvO01PH7x4t6DJx+guahgTnBHkhJdG7soQeTSFLWN3efnHyibZ4Z8l2EuWwJN3A==
 
 "@tsconfig/node10@^1.0.7":
   version "1.0.12"
@@ -933,6 +951,16 @@ fast-check@^3.23.1:
   dependencies:
     pure-rand "^6.1.0"
 
+file-type@^21.3.0:
+  version "21.3.0"
+  resolved "https://registry.yarnpkg.com/file-type/-/file-type-21.3.0.tgz#03334acfe59cc22f72fce2a1327c5a1190f0b7de"
+  integrity sha512-8kPJMIGz1Yt/aPEwOsrR97ZyZaD1Iqm8PClb1nYFclUCkBi0Ma5IsYNQzvSFS9ib51lWyIw5mIT9rWzI/xjpzA==
+  dependencies:
+    "@tokenizer/inflate" "^0.4.1"
+    strtok3 "^10.3.4"
+    token-types "^6.1.1"
+    uint8array-extras "^1.4.0"
+
 fill-range@^7.1.1:
   version "7.1.1"
   resolved "https://registry.npmjs.org/fill-range/-/fill-range-7.1.1.tgz"
@@ -1113,6 +1141,11 @@ iconv-lite@^0.7.0, iconv-lite@~0.7.0:
   integrity sha512-cf6L2Ds3h57VVmkZe+Pn+5APsT7FpqJtEhhieDCvrE2MK5Qk9MyffgQyuxQTm6BChfeZNtcOLHp9IcWRVcIcBQ==
   dependencies:
     safer-buffer ">= 2.1.2 < 3.0.0"
+
+ieee754@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/ieee754/-/ieee754-1.2.1.tgz#8eb7a10a63fff25d15a57b001586d177d1b0d352"
+  integrity sha512-dcyqhDvX1C46lXZcVqCpK+FtMRQVdIMN6/Df5js2zouUsqG7I6sFxitIC+7KYK29KdXOLHdu9zL4sFnoVQnqaA==
 
 inflight@^1.0.4:
   version "1.0.6"
@@ -1889,6 +1922,13 @@ strip-json-comments@^2.0.0:
   resolved "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-2.0.1.tgz"
   integrity sha512-4gB8na07fecVVkOI6Rs4e7T6NOTki5EmL7TUduTs6bu3EdnSycntVJ4re8kgZA+wx9IueI2Y11bfbgwtzuE0KQ==
 
+strtok3@^10.3.4:
+  version "10.3.4"
+  resolved "https://registry.yarnpkg.com/strtok3/-/strtok3-10.3.4.tgz#793ebd0d59df276a085586134b73a406e60be9c1"
+  integrity sha512-KIy5nylvC5le1OdaaoCJ07L+8iQzJHGH6pWDuzS+d07Cu7n1MZ2x26P8ZKIWfbK02+XIL8Mp4RkWeqdUCrDMfg==
+  dependencies:
+    "@tokenizer/token" "^0.3.0"
+
 supports-preserve-symlinks-flag@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmjs.org/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz"
@@ -1910,6 +1950,15 @@ toidentifier@~1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/toidentifier/-/toidentifier-1.0.1.tgz"
   integrity sha512-o5sSPKEkg/DIQNmH43V0/uerLrpzVedkUh8tGNvaeXpfpuwjKenlSox/2O/BTlZUtEe+JG7s5YhEz608PlAHRA==
+
+token-types@^6.1.1:
+  version "6.1.2"
+  resolved "https://registry.yarnpkg.com/token-types/-/token-types-6.1.2.tgz#18d0fd59b996d421f9f83914d6101c201bd08129"
+  integrity sha512-dRXchy+C0IgK8WPC6xvCHFRIWYUbqqdEIKPaKo/AcTUNzwLTK6AH7RjdLWsEZcAN/TBdtfUw3PYEgPr5VPr6ww==
+  dependencies:
+    "@borewit/text-codec" "^0.2.1"
+    "@tokenizer/token" "^0.3.0"
+    ieee754 "^1.2.1"
 
 tree-kill@^1.2.2:
   version "1.2.2"
@@ -2002,6 +2051,11 @@ typescript@^5.9.3:
   version "5.9.3"
   resolved "https://registry.npmjs.org/typescript/-/typescript-5.9.3.tgz"
   integrity sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==
+
+uint8array-extras@^1.4.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/uint8array-extras/-/uint8array-extras-1.5.0.tgz#10d2a85213de3ada304fea1c454f635c73839e86"
+  integrity sha512-rvKSBiC5zqCCiDZ9kAOszZcDvdAHwwIKJG33Ykj43OKcWsnmcBRL09YTU4nOeHZ8Y2a7l1MgTd08SBe9A8Qj6A==
 
 undici-types@~7.16.0:
   version "7.16.0"

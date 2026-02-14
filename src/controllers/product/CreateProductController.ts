@@ -9,8 +9,6 @@ class CreateProductController{
         if(!req.file){      
             throw new Error("Error, upload a file")
         }
-                    console.log(req.body)   
-            console.log(req.file) 
 
         const { filename } = req.file;
 
