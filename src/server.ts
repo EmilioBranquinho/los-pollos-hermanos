@@ -6,11 +6,8 @@ import path from 'path';
 const app = express();
 app.use(express.json()); 
 app.use(cors({
-  origin: [
-    "http://localhost:3000",
-    "http://localhost:8081",
-    process.env.CLIENT_URL as string
-  ]
+  origin: "*",
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
 }));
 
 app.use('/img', express.static(path.resolve(__dirname, "..", "tmp")));
